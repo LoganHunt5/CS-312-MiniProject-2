@@ -35,7 +35,6 @@ app.post("/generate", async (req, res) => {
         } else {
             emojidata = await axios.get("https://emojihub.yurace.pro/api/random/category/" + emoji[0]);
         }
-        console.log(emojidata);
         res.redirect("/emoji");
     } catch(error) {
         console.log(error.response);
