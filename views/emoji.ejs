@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emoji Roll</title>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+        <h1> You Rolled A <%= emoji.name%></h1>
+        <h2>Category: <%= emoji.category%></h2>
+        <h2>Group: <%= emoji.group%></h2>
+        <% if(emoji.htmlCode.length === 2) { %>
+        <h2>HTMLCode: <%= emoji.htmlCode[0] %><%= emoji.htmlCode[1]%></h2>
+        <%}else{%>
+        <h2>HTMLCode: <%= emoji.htmlCode[0] %></h2>
+        <%}%>
+        <h2>Unicode: <%= emoji.unicode %></h2>
+        <% if(emoji.htmlCode.length === 2) { %>
+        <p class="EmojiIcon"><%=emoji.htmlCode[0]%><%=emoji.htmlCode[1]%></p>
+        <%}else{%>
+        <p class="EmojiIcon"><%=emoji.htmlCode[0]%></p>
+        <%}%>
+    </body>
+</html>
+
+

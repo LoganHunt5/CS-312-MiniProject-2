@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
+        <script>
+      function typeChange() {
+      var categoryDrop = document.getElementById("category");
+      var typeDrop = document.getElementById("type");
+
+      typeDrop.innerHTML = "";
+      var selectedCategory = categoryDrop.value;
+
+      const EmojiMap = new Map();
+      EmojiMap.set("random", ["random"]);
+      EmojiMap.set("smileys-and-people", ["body", "cat-face", "clothing", "creature-face", "emotion", "face-negative", "face-neutral", "face-positive", "face-positive", "face-role", "face-sick", "family", "monkey-face", "person", "person-activity", "person-gesture", "person-role", "skin-tone"]);
+      EmojiMap.set("animals-and-nature", ["animal-amphibian", "animal-bird", "animal-bug", "animal-mammal", "animal-marine", "animal-reptile", "plant-flower", "plant-other"]);
+      EmojiMap.set("food-and-drink", ["dishware", "drink", "food-asian", "food-fruit", "food-prepared", "food-sweet", "food-vegetable"]);
+      EmojiMap.set("travel-and-places", ["travel-and-places"]);
+      EmojiMap.set("activites", ["activites"]);
+      EmojiMap.set("objects", ["objects"]);
+      EmojiMap.set("symbols", ["symbols"]);
+      EmojiMap.set("flags", ["flags"]);
+
+      var types = EmojiMap.get(selectedCategory);
+      var any = document.createElement("option");
+      any.text = "any";
+      typeDrop.add(any);
+      for (var i = 0; i < types.length; i++) {
+      var type = document.createElement("option");
+      type.text = types[i];
+      typeDrop.add(type);
+      }
+      }
+        </script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Random Emoji</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+
     </head>
 
     <body>
+
         <!-- Write your code here -->
+        <h1 class="title">Generate a Random Emoji!</h1>
+        <%= emoji  %>
+        <form action="/generate" method="POST">
+            Category:
+            <select name ="category" id="category" onchange="typeChange()">
+                <option selected disabled>--select--</option>
+                <% for (var i = 0; i < emojimap.length; i++) { %>
+                <option value=<%=emojimap[i]%>><%=emojimap[i]%></option>
+                <%};%>
+
+            </select>
+            Type:
+            <select name="type" id="type">
+                <option>Pick Category First</option>
+            </select>
+            <input type="submit" value="Generate"></input>
+        </form>
+
     </body>
 
 </html>
