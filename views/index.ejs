@@ -41,12 +41,12 @@
 
     <body>
 
-        <!-- Write your code here -->
-        <h1 class="title">Generate a Random Emoji!</h1>
-        <%= emoji  %>
-        <form action="/generate" method="POST">
+    <!-- Write your code here -->
+    <h1 class="title">Generate a Random Emoji!</h1>
+    <div class="HomeWrap">
+        <form action="/generate" method="POST" >
             Category:
-            <select name ="category" id="category" onchange="typeChange()">
+            <select name ="category" id="category" class="HomeCategoryDrop" onchange="typeChange()">
                 <option selected disabled>--select--</option>
                 <% for (var i = 0; i < emojimap.length; i++) { %>
                 <option value=<%=emojimap[i]%>><%=emojimap[i]%></option>
@@ -57,8 +57,9 @@
             <select name="type" id="type">
                 <option>Pick Category First</option>
             </select>
-            <input type="submit" value="Generate"></input>
+            <input class= "Generate" type="submit" value="Generate"></input>
         </form>
+    </div>
 
     </body>
 

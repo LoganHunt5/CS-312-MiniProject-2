@@ -25,19 +25,20 @@ app.get("/emoji", (req, res) => {
 app.post("/generate", async (req, res) => {
     try{
         emoji = [req.body["category"], req.body["type"]];
+        console.log(emoji[1]);
         if(req.body["type"] === "Pick Category First"){
             res.redirect("/");
         } else if(req.body["category"] === "random") {
             emojidata = await axios.get("https://emojihub.yurace.pro/api/random");
         } else if (req.body["type"] !== "any") {
-            emojidata = await axios.get("https://emojihub.yurace.pro/api/random/category/" + emoji[0]);
+            emojidata = await axios.get("https://emojihub.yurace.pro/api/random/group/" + emoji[1]);
         } else {
-            emojidata = await axios.get("https://emojihub.yurace.pro/api/random/type/" + emoji[1]);
+            emojidata = await axios.get("https://emojihub.yurace.pro/api/random/category/" + emoji[0]);
         }
         console.log(emojidata);
         res.redirect("/emoji");
     } catch(error) {
-        console.log(error.response.data);
+        console.log(error.response);
         res.status(500);
     }
 

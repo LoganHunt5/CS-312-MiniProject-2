@@ -1,4 +1,90 @@
 .title{
     text-align: center;
+    line-height: 10rem;
+}
+
+.HomeWrap{
+    font-size: 2.5rem;
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
+    align-content: center;
+}
+.HomeWrap select{
+    width: 300px;
+    height: 80px;
+    font-size: 30px;
+}
+
+.HomeCategoryDrop{
+    margin-right: 30px;
+}
+
+.Generate{
+    width: 250px;
+    height: 60px;
+    margin-left: 30px;
+    font-size: 2rem;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.Generate:hover{
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(75,93,115,1) 100%);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.EmojiWrap{
+    justify-content: center;
+}
+
+.EmojiIcon{
+    font-size: 200px;
+}
+
+h1{
+    font-size: 60px;
+}
+h2{
+    font-size: 40px;
+}
+
+.BackBut{
+    width: 200px;
+    height: 80px;
+    font-size: 40px;
+}
+
+.BackButForm{
+    width: fit-content;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+.EmojiRoll{
     line-height: 150px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.EmojiWrap{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.EmojiGridItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
